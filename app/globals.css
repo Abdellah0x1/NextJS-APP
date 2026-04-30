@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: #9c3c1e;
+  --color-primary-container: #bc5434;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary: #00658d;
+  --color-secondary-container: #6bc8fe;
+  --color-on-secondary: #ffffff;
+  
+  --color-tertiary: #755600;
+  --color-tertiary-container: #936d00;
+  --color-on-tertiary: #ffffff;
+  
+  --color-surface: #fff8f3;
+  --color-surface-dim: #e0d9d2;
+  --color-surface-variant: #e9e1db;
+  --color-on-surface: #1e1b17;
+  
+  --color-success: #2e7d32;
+  --color-error: #ba1a1a;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-surface);
+  --color-foreground: var(--color-on-surface);
+
+  --font-serif: var(--font-noto-serif);
+  --font-sans: var(--font-jakarta);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-arch: 100px 100px 0 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md uppercase text-sm font-semibold tracking-wider transition-all duration-300 flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-container hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-secondary text-secondary hover:bg-secondary/10;
+  }
+  
+  .btn-outline-white {
+    @apply bg-transparent border border-white text-white hover:bg-white/10;
+  }
+
+  .btn-tertiary {
+    @apply bg-gradient-to-r from-tertiary to-tertiary-container text-white border-none shadow-md hover:shadow-lg;
+  }
+
+  .warm-shadow {
+    box-shadow: 0 10px 25px -5px rgba(156, 60, 30, 0.1), 0 8px 10px -6px rgba(156, 60, 30, 0.1);
+  }
+
+  .zellij-pattern {
+    position: relative;
+    z-index: 0;
+  }
+  .zellij-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--color-surface-dim) 2px, transparent 2px), radial-gradient(var(--color-surface-dim) 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+  }
+
 }
