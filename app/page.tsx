@@ -4,6 +4,7 @@ import Fez from '../public/fez.jpg';
 import Image from 'next/image';
 import mountains from "../public/atlas_mountains.webp"
 import tagine from "../public/tagine.jpeg"
+import BackToTop from "./components/BackToTop";
 
 export default function Home() {
   return (
@@ -92,7 +93,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <BackToTop />
     </div>
   );
 }
-
