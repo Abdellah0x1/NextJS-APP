@@ -44,8 +44,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Maroc Discovery. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0 font-sans text-xs uppercase tracking-widest text-on-surface-variant">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
 

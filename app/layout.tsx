@@ -31,9 +31,9 @@ export default function RootLayout({
       lang="en"
       className={`${notoSerif.variable} ${jakarta.variable} h-full`}
     >
-      <body className="min-h-screen flex flex-col flex-1">
+      <body className="min-h-screen  flex flex-col flex-1">
         <Navigation />
-        <main className="flex-1">
+        <main className="flex-1 ">
           {children}
         </main>
         <Footer />
